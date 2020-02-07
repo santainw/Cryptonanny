@@ -1,0 +1,11 @@
+.navbar {
+    background-color: black;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    .project-name {
+        padding: 8px;
+        font-size: 25px;
+        color: #d6d6d6;
+    }
+}
