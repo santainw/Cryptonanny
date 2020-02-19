@@ -1,0 +1,21 @@
+.create-paper-container {
+  .create-card {
+    margin-top: 20px;
+    margin-left: auto;
+    width: 800px;
+    margin-right: auto;
+    background-color: white;
+    padding: 15px;
+    border: 1px solid;
+    border-radius: 5px;
+    > .title {
+      text-align: center;
+    }
+  }
+  .editor-section {
+    min-height: 400px;
+  }
+  .btn {
+    margin-top: 10px;
+  }
+}

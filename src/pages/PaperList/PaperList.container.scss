@@ -1,0 +1,58 @@
+.paper-list-container {
+  .paper-card {
+    margin-top: 20px;
+    margin-left: auto;
+    width: 800px;
+    margin-right: auto;
+    background-color: white;
+    padding: 15px;
+    border: 1px solid;
+    border-radius: 5px;
+    > .title {
+      text-align: left;
+      display: flex;
+      > h1 {
+        margin-top: 5px;
+        width: 100%;
+      }
+      > .btn {
+        width: 128px;
+        height: 18px;
+      }
+    }
+    .paper:last-child {
+      border-bottom: unset;
+    }
+    .paper:hover {
+      background-color: whitesmoke;
+    }
+    .paper {
+      cursor: pointer;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      border-bottom: 1px solid #bfbebe;
+      > .short-description {
+        font-weight: 100;
+        width: 300px;
+        height: 30px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-spacing: unset;
+        word-break: unset;
+        white-space: nowrap;
+      }
+      > .title {
+        font-weight: 500;
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+      > .editor {
+        opacity: 0.7;
+        font-weight: 400;
+        font-size: 12px;
+        width: fit-content;
+        margin-left: auto;
+      }
+    }
+  }
+}

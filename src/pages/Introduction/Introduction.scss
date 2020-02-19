@@ -1,7 +1,24 @@
 .introduction-content {
-    background-color: #d6d6d6;
-    min-height: 800px;
-    .crypto-gif {
-        width: 100%;
+  background-color: #d6d6d6;
+  min-height: 800px;
+  .crypto-gif {
+    width: 100%;
+    position: absolute;
+  }
+  .text {
+    position: absolute;
+    border-radius: 5px;
+    min-width: 40%;
+    margin-right: 30%;
+    margin-left: 30%;
+    width: 178px;
+    height: 200px;
+    z-index: 1;
+    color: black;
+    background: white;
+    margin-top: 20px;
+    .title {
+      text-align: center;
     }
+  }
 }
