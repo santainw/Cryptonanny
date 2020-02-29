@@ -5,7 +5,9 @@ import {
   Home,
   PaperList,
   CreatePaper,
-  ViewPaper
+  ViewPaper,
+  BookList,
+  ViewBook
 } from 'pages'
 
 import Favicon from 'react-favicon';
@@ -18,9 +20,11 @@ const Routes = () => {
       <Router>
         <Root path='/'>
           <Home path='/' />
+          <BookList path='/book-list' />
           <PaperList path='/paper-list' />
           <CreatePaper path='/create-paper' />
           <ViewPaper path='/view-paper' />
+          <ViewBook path='/view-book' />
         </Root>
       </Router>
     </>

@@ -1,24 +1,87 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:900");
+
+$size: 35vw;
+$shadow: 35;
+$primary: white;
+$secondary: black;
+
 .introduction-content {
-  background-color: #d6d6d6;
   min-height: 800px;
-  .crypto-gif {
-    width: 100%;
+  .btn.site {
+    text-align: center;
+    width: -moz-fit-content;
+    width: 500px;
+    font-size: 75px;
+    border-radius: 5px;
+    padding: 10px 50px;
+    border: 1px solid white;
+    cursor: pointer;
+    color: white;
+    background: black;
+    margin-right: 30%;
+    margin-left: 30%;
     position: absolute;
+    top: 40%;
+  }
+  > .wrapper {
+    animation: sliding-background 40s linear infinite;
+    background: url("https://images.unsplash.com/photo-1452697620382-f6543ead73b5") no-repeat left / 120%;
+    height: 800px;
+    text-align: center;
+    width: 100vw;
+    > .title {
+      // background: $primary;
+      color: $secondary;
+      font-family: "Montserrat", sans-serif;
+      font-size: $size;
+      letter-spacing: 1vw;
+      line-height: 100vh;
+      margin: 0;
+      mix-blend-mode: lighten;
+      text-transform: uppercase;
+      $text-shadow: ();
+      @for $i from 1 through $shadow {
+        $text-shadow: $text-shadow, 1px * $i 1px * $i $secondary;
+      }
+      text-shadow: 0 0 0px, $text-shadow;
+
+      &:before {
+        color: $primary;
+        content: attr(data-text);
+        margin-left: -1%;
+        margin-top: -1%;
+        position: absolute;
+      }
+    }
   }
   .text {
     position: absolute;
     border-radius: 5px;
+    border: 1px solid white;
     min-width: 40%;
     margin-right: 30%;
     margin-left: 30%;
     width: 178px;
     height: 200px;
     z-index: 1;
-    color: black;
-    background: white;
-    margin-top: 20px;
+    color: white;
+    background: transparent;
+    margin-top: 80px;
     .title {
       text-align: center;
+      font-size: 25px;
+      margin-bottom: 60px;
     }
+  }
+}
+
+@keyframes sliding-background {
+  0%,
+  100% {
+    background-position: 0 40%;
+  }
+
+  50% {
+    background-position: 100% 40%;
   }
 }

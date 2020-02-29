@@ -10,13 +10,17 @@ function Navbar() {
         navigate('/')
     }
 
+    const handleClickUser = () => {
+        navigate('/paper-list')
+    }
+
     return (
         <div className="navbar">
             <div className="project-name" onClick={() => handleClickLogo()}>
                 Cryptonanny
             </div>
             <div className="wallet">
-                <div className="coin">0.00 NC</div>
+                <div className="coin" onClick={() => handleClickUser()}>N'beatiful nan</div>
             </div>
         </div>
     )

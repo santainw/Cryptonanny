@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 import { navigate } from '@reach/router'
 
@@ -157,6 +158,20 @@ const mockPaper = [
 
 class PaperListContainer extends Component {
 
+    constructor(props){
+        super(props)
+        this.state = {
+            paperList: []
+        }
+    }
+
+    componentDidMount() {
+
+    }
+
+    fetchAllPaper() {
+        return axios.get('')
+    }
 
     renderPaperList = () => {
         return mockPaper.map((paper, index) => <div className="paper" key={index} onClick={() => this.handleClickViewPaper(paper)}>

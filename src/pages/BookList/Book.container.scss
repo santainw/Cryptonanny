@@ -1,9 +1,15 @@
-.paper-list-container {
+.book-list-container {
   .crypto-gif {
     width: 100%;
     position: absolute;
   }
   .paper-card {
+    > .book-container {
+      height: 600px;
+      overflow-y: scroll;
+      display: flex;
+      flex-wrap: wrap;
+    }
     margin-top: 20px;
     margin-left: auto;
     width: 800px;
@@ -31,10 +37,27 @@
       background-color: whitesmoke;
     }
     .paper {
+      margin-left: 20px;
+      margin-right: 20px;
       cursor: pointer;
+      padding-left: 30px;
+      padding-right: 30px;
       padding-bottom: 10px;
       padding-top: 10px;
-      border-bottom: 1px solid #bfbebe;
+      overflow: hidden;
+      width: 160px;
+      text-align: center;
+      > h3 {
+        word-spacing: unset;
+        word-spacing: unset;
+        overflow: hidden;
+        height: 20px;
+        text-overflow: ellipsis;
+      }
+      img {
+        width: 100px;
+        height: 150px;
+      }
       > .short-description {
         font-weight: 100;
         width: 300px;

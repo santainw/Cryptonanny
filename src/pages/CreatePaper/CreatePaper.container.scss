@@ -1,5 +1,26 @@
 .create-paper-container {
   .create-card {
+    > .create-form {
+      display: flex;
+      margin-bottom: 20px;
+      > .form {
+        align-items: center;
+        display: flex;
+        margin-left: 20px;
+        margin-right: 20px;
+        > input {
+          height: 15px;
+          width: 180px;
+          border-radius: 5px;
+          border: 1px solid #eeeeee;
+          margin-left: 10px;
+        }
+        .unit {
+          font-size: 10px;
+          margin-left: 10px;
+        }
+      }
+    }
     margin-top: 20px;
     margin-left: auto;
     width: 800px;

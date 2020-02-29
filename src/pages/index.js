@@ -4,6 +4,8 @@ import { Root } from './Root'
 import { PaperList } from './PaperList'
 import { CreatePaper } from './CreatePaper'
 import { ViewPaper } from './ViewPaper'
+import { BookList } from './BookList'
+import { ViewBook } from './ViewBook'
 
 export {
     Root,
@@ -11,5 +13,7 @@ export {
     Introduction,
     PaperList,
     CreatePaper,
-    ViewPaper
+    ViewPaper,
+    BookList,
+    ViewBook
 }

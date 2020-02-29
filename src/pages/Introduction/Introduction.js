@@ -9,21 +9,25 @@ import { navigate } from '@reach/router'
 function Introduction() {
 
     const handleBtnInSite = () => {
-        navigate('/paper-list')
+        navigate('/book-list')
     }
 
     return (
         <div className="introduction-content">
-            <img className="crypto-gif" src={crytoGif} alt={'background'}></img>
-            <div className="text">
+            <div className="wrapper" data-text="Yes!">
+                {/* <h1 className="title">CryptoNanny</h1>
+                <h1 className="title">Nanny</h1> */}
+            </div>
+            <div className="btn site" onClick={() => handleBtnInSite()}>Start</div>
+            {/* <div className="text">
                 <div className="title">
-                    <h2>How to</h2>
+                    <h2>Welcome to CryptoNanny</h2>
                 </div>
                 <div className="content">
 
                 </div>
-                <div className="btn site" onClick={() => handleBtnInSite()}>Start</div>
-            </div>
+                
+            </div> */}
         </div>
     )
 }

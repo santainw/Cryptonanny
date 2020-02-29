@@ -15,6 +15,10 @@
     color: #d6d6d6;
     .coin {
       padding: 15px;
+      cursor: pointer;
+      &:hover {
+        color: white;
+      }
     }
   }
 }
