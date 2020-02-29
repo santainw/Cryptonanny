@@ -19,10 +19,10 @@ function ViewBook(props) {
 
     const handlePurchase = () => {
         // const swal = new Swal()
-        axios.post('localhost:3000/product/buy',
+        axios.post('http://localhost:3000/products/buy',
             {
                 pid: localStorage.getItem('pid'),
-                buyer: '0x71647614825B36b12eDB47BdEE86CB7Ca2051392',
+                buyer: '0xbC94Ba9c1A4D8a899ffA6fCd05e7806aC39D2923',
                 password: '1234'
             }
         )
