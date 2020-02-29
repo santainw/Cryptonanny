@@ -2,6 +2,7 @@ import React from 'react'
 
 import './ViewBook.container.scss'
 import swal from 'sweetalert'
+import axios from 'axios'
 import { navigate } from '@reach/router'
 
 function ViewBook(props) {
@@ -18,16 +19,23 @@ function ViewBook(props) {
 
     const handlePurchase = () => {
         // const swal = new Swal()
-        
-        swal(
-            'Success',
-            'This is a book!',
-            'success'
+        axios.post('localhost:3000/product/buy',
+            {
+                pid: localStorage.getItem('pid'),
+                buyer: '0x71647614825B36b12eDB47BdEE86CB7Ca2051392',
+                password: '1234'
+            }
         )
-        .then(() => {
-            navigate('book-list')
-        })
-
+            .then(() => {
+                swal(
+                    'Success',
+                    'This is a book!',
+                    'success'
+                )
+                    .then(() => {
+                        navigate('book-list')
+                    })
+            })
     }
 
     return (

@@ -8,6 +8,7 @@ import book3 from 'assets/images/book3.jpg'
 import book4 from 'assets/images/book4.jpg'
 import book5 from 'assets/images/book5.jpg'
 import book6 from 'assets/images/book6.jpg'
+import book7 from 'assets/images/book7.jpg'
 
 
 import { navigate } from '@reach/router'
@@ -16,8 +17,8 @@ import './Book.container.scss'
 
 const mockPaper = [
     {
-        image: book1,
-        title: 'EDUCATION FOR SUSTAINABLE',
+        image: book7,
+        title: 'にんげん、人間 ',
         amount: '12.003 ETH'
     },
     {
