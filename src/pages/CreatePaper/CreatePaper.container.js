@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 import './CreatePaper.container.scss'
@@ -7,9 +7,12 @@ import { navigate } from '@reach/router'
 import swal from 'sweetalert'
 
 function CreatePaper(props) {
-    const [createType, setCreateType] = useState(null)
+    const [createType, setCreateType] = useState('sell')
     const [title, setTitle] = useState('')
     const [price, setPrice] = useState('0')
+    const [freeStyle, setFreeStyle] = useState({})
+    const [sellStyle, setSellStyle] = useState({})
+
 
     const createPaper = () => {
         let formPaper = new FormData()
@@ -61,16 +64,27 @@ function CreatePaper(props) {
 
     const RenderCreateType = () => {
         return <div className="create-type-container">
-            <div className="button" onClick={() => setCreateType('free')}>Free</div>
-            <div className="button" onClick={() => setCreateType('sell')}>Sell</div>
+            <div className="button" style={freeStyle} onClick={() => setCreateType('free')}>Free</div>
+            <div className="button" style={sellStyle} onClick={() => setCreateType('sell')}>Sell</div>
         </div>
     }
 
-    const RenderInput = () => {
+    const handlePrice = (value) => {
         if (createType === 'free') {
-            return <><div className="free">0</div><div className="unit">ETH</div></>
+            setPrice('0')
         } else {
-            return <><input placeholder='price' onChange={(e) => setPrice(e.target.value)}/><div className="unit">ETH</div></>
+            setPrice(value)
+        }
+    }
+
+    const handleCreateType = (type) => {
+        if (type === 'free') {
+            setPrice('0')
+            setFreeStyle({ background: 'black', color: 'white' })
+            setSellStyle({ background: '#949494', color: 'white' })
+        } else {
+            setSellStyle({ background: 'black', color: 'white' })
+            setFreeStyle({ background: '#949494', color: 'white' })
         }
     }
 
@@ -83,12 +97,16 @@ function CreatePaper(props) {
                 <div className="create-form">
                     <div className="form">
                         <div className="text">Title: </div>
-                        <input placeholder='title' onChange={(e) => setTitle(e.target.value)}/>
+                        <input placeholder='title' onChange={(e) => setTitle(e.target.value)} />
                     </div>
-                    {createType === null ? <RenderCreateType /> : <div className="form">
-                        <div className="text">Price: </div>
-                        <RenderInput />
-                    </div>}
+                    <div className="create-type-container">
+                        <div className="button" style={freeStyle} onClick={() => handleCreateType('free')}>Free</div>
+                        <div className="button" style={sellStyle} onClick={() => handleCreateType('sell')}>Sell</div>
+                    </div>
+                    <div className="form"><input placeholder='price' 
+                    className="price" value={price} 
+                    onChange={(e) => handlePrice(e.target.value)}/>
+                        <div className="unit">ETH</div></div>
                     <div className="form">
                         <input type="file" />
                     </div>
