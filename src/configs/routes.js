@@ -34,11 +34,16 @@ const Routes = () => {
         setUsername(user_name)
         break;
       case 'buy':
+        const buyer = localStorage.getItem('user_wallet')
+        const amount = localStorage.getItem('current_buy_amount')
+        const seller_id = '0x197b6caFAf8507eF27926027b292343b7D8f76b8'
+        const pid = localStorage.getItem('pid')
         axios.post('http://localhost:3000/products/buy',
           {
-            pid: localStorage.getItem('pid'),
-            buyer: '0xbC94Ba9c1A4D8a899ffA6fCd05e7806aC39D2923',
-            password: '1234'
+            pid: pid,
+            buyer: buyer,
+            password: '1234',
+            to: seller_id
           }
         )
           .then(() => {
@@ -48,6 +53,7 @@ const Routes = () => {
               'success'
             )
               .then(() => {
+                handleEmit('user_wallet')
                 navigate('book-list')
               })
           })
@@ -61,11 +67,11 @@ const Routes = () => {
       <Router>
         <Root path='/' coin={coin} username={username}>
           <Home path='/' handleEmit={handleEmit} />
-          <BookList path='/book-list' />
-          <PaperList path='/paper-list' />
-          <CreatePaper path='/create-paper' />
-          <ViewPaper path='/view-paper' />
-          <ViewBook path='/view-book' />
+          <BookList path='/book-list' handleEmit={handleEmit} />
+          <PaperList path='/paper-list' handleEmit={handleEmit} />
+          <CreatePaper path='/create-paper' handleEmit={handleEmit} />
+          <ViewPaper path='/view-paper' handleEmit={handleEmit} />
+          <ViewBook path='/view-book' handleEmit={handleEmit} />
         </Root>
       </Router>
     </>

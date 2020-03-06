@@ -10,7 +10,8 @@ function ViewBook(props) {
     const {
         title,
         image,
-        amount
+        amount,
+        pid
     } = props.location.state
 
     const handleOnBack = () => {
@@ -19,7 +20,9 @@ function ViewBook(props) {
 
     const handlePurchase = () => {
         // const swal = new Swal()
-        
+        localStorage.setItem('current_buy_amount', amount.split(' ')[0])
+        localStorage.setItem('pid', pid)
+        props.handleEmit('buy')
     }
 
     return (

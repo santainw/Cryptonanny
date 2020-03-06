@@ -15,7 +15,8 @@ function Introduction(props) {
     const [password, setPassword] = useState('')
 
     const handleBtnInSite = () => {
-        if (mockUser[username] === undefined) {
+        if (false) {
+            // if (mockUser[username] === undefined) {
             swal(
                 'Fail!',
                 'Wrong username and password !',
