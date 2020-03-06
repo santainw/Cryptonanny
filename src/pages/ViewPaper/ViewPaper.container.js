@@ -5,7 +5,7 @@ import './ViewPaper.container.scss'
 import { navigate } from '@reach/router'
 
 function ViewPaper(props) {
-    
+
     const {
         title,
         description,

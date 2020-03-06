@@ -3,11 +3,33 @@
     > .create-form {
       display: flex;
       margin-bottom: 20px;
+      .create-type-container {
+        display: flex;
+        > .button {
+          cursor: pointer;
+          color: white;
+          background: #949494;
+          border: 1px solid #949494;
+          padding: 0px 15px;
+          font-size: 13px;
+          border-radius: 3px;
+        }
+        > .button:last-child {
+          margin-left: 20px;
+        }
+        > .button:hover {
+          background: black;
+        }
+      }
       > .form {
         align-items: center;
         display: flex;
         margin-left: 20px;
         margin-right: 20px;
+        .free {
+          font-size: 12px;
+          margin-left: 20px;
+        }
         > input {
           height: 15px;
           width: 180px;

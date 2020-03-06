@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Router } from '@reach/router'
 import {
   Root,
@@ -9,17 +9,34 @@ import {
   BookList,
   ViewBook
 } from 'pages'
+import axios from 'axios'
 
 import Favicon from 'react-favicon';
 
 const Routes = () => {
 
+  const [username, setUsername] = useState('')
+  const [coin, setCoin] = useState('0')
+
+  const handleEmit = (value) => {
+    switch (value) {
+      case 'user_wallet':
+        axios.get('http://localhost:3001/balance', { headers: { acc: localStorage.getItem('user_wallet') } })
+          .then((value) => {
+            setCoin(value.balance)
+          })
+        break;
+      case 'user_name':
+        setUsername(username)
+    }
+  }
+
   return (
     <>
       {/* <Favicon url="/assets/images/nanny.jpg" /> */}
       <Router>
-        <Root path='/'>
-          <Home path='/' />
+        <Root path='/' coin={coin} username={username}>
+          <Home path='/' handleEmit={handleEmit} />
           <BookList path='/book-list' />
           <PaperList path='/paper-list' />
           <CreatePaper path='/create-paper' />

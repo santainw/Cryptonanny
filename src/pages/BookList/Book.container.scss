@@ -10,6 +10,20 @@
       display: flex;
       flex-wrap: wrap;
     }
+    > .tab-group {
+      display: flex;
+      > .tab {
+        cursor: pointer;
+        margin-left: 20px;
+      }
+      > .tab:last-child {
+        border-left: 1px solid #8e8e8e;
+        padding-left: 20px
+      }
+      > .tab:hover {
+        color: blue;
+      }
+    }
     margin-top: 20px;
     margin-left: auto;
     width: 800px;
@@ -51,7 +65,7 @@
         word-spacing: unset;
         word-spacing: unset;
         overflow: hidden;
-        height: 20px;
+        height: 22px;
         text-overflow: ellipsis;
       }
       img {

@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 
 import './CreatePaper.container.scss'
 import book7 from 'assets/images/book7.jpg'
 import { navigate } from '@reach/router'
+import swal from 'sweetalert'
 
 function CreatePaper() {
+    const [createType, setCreateType] = useState(null)
 
     const createPaper = () => {
         let formPaper = new FormData()
@@ -18,11 +20,13 @@ function CreatePaper() {
         formPaper.append('productQtyInput', '20')
         formPaper.append('accountPassword', '1234')
 
-        return axios.post('http://localhost:3000/products/add',
+        return axios.post('http://localhost:3001/products/add',
             formPaper,
-            {headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            }}
+            {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                }
+            }
             // {
             //     productImageInput: book7,
             //     productNameInput: 'หนังสือ',
@@ -32,19 +36,36 @@ function CreatePaper() {
             //     accountPassword: '1234'
             // }
         )
-        .then((result) => {
-            console.log(result.data)
-            console.log(result.data.data.pid)
-            localStorage.setItem('pid', result.data.data.pid)
-            // localStorage.setItem('pid', result.data.pid)
-        })
     }
 
     const handleOnCreate = () => {
         createPaper()
-            .then(() => {
-                navigate('/paper-list')
+            .then((result) => {
+                const data = result.data.data
+                localStorage.setItem('pid', data.pid)
+                swal(
+                    'Success!',
+                    'Paper Created !',
+                    'success')
+                    .then(() => {
+                        navigate('/paper-list')
+                    })
             })
+    }
+
+    const RenderCreateType = () => {
+        return <div className="create-type-container">
+            <div className="button" onClick={() => setCreateType('free')}>Free</div>
+            <div className="button" onClick={() => setCreateType('sell')}>Sell</div>
+        </div>
+    }
+
+    const RenderInput = () => {
+        if (createType === 'free') {
+            return <><div className="free">0</div><div className="unit">ETH</div></>
+        } else {
+            return <><input placeholder='price' type="number" /><div className="unit">ETH</div></>
+        }
     }
 
     return (
@@ -58,10 +79,10 @@ function CreatePaper() {
                         <div className="text">Title: </div>
                         <input placeholder='title' />
                     </div>
-                    <div className="form">
+                    {createType === null ? <RenderCreateType /> : <div className="form">
                         <div className="text">Price: </div>
-                        <input placeholder='price' type="number" /><div className="unit">ETH</div>
-                    </div>
+                        <RenderInput />
+                    </div>}
                     <div className="form">
                         <input type="file" />
                     </div>

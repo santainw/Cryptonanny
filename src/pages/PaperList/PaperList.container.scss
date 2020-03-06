@@ -24,6 +24,21 @@
         height: 18px;
       }
     }
+    > .tab-group {
+      margin-bottom: 20px;
+      display: flex;
+      > .tab {
+        cursor: pointer;
+        margin-left: 20px;
+      }
+      > .tab:last-child {
+        border-left: 1px solid #8e8e8e;
+        padding-left: 20px;
+      }
+      > .tab:hover {
+        color: blue;
+      }
+    }
     .paper:last-child {
       border-bottom: unset;
     }
