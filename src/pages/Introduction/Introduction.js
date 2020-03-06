@@ -31,7 +31,7 @@ function Introduction(props) {
                     localStorage.setItem('user_name', username)
                     props.handleEmit('user_wallet')
                     props.handleEmit('user_name')
-                    // navigate('/book-list')
+                    navigate('/book-list')
                 })
         }
     }
