@@ -19,23 +19,7 @@ function ViewBook(props) {
 
     const handlePurchase = () => {
         // const swal = new Swal()
-        axios.post('http://localhost:3000/products/buy',
-            {
-                pid: localStorage.getItem('pid'),
-                buyer: '0xbC94Ba9c1A4D8a899ffA6fCd05e7806aC39D2923',
-                password: '1234'
-            }
-        )
-            .then(() => {
-                swal(
-                    'Success',
-                    'This is a book!',
-                    'success'
-                )
-                    .then(() => {
-                        navigate('book-list')
-                    })
-            })
+        
     }
 
     return (
