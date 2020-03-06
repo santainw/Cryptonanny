@@ -25,7 +25,7 @@ const Routes = () => {
         const user_wallet = localStorage.getItem('user_wallet')
         axios.get(`http://localhost:3001/balance/${user_wallet}`)
           .then((value) => {
-            const parseBalance = value.data.balance.substring(0, value.data.balance.indexOf('.') + 2)
+            const parseBalance = value.data.balance.includes('.') ? value.data.balance.substring(0, value.data.balance.indexOf('.') + 2) : value.data.balance 
             setCoin(parseBalance)
           })
         break;
@@ -38,7 +38,7 @@ const Routes = () => {
         const amount = localStorage.getItem('current_buy_amount')
         const seller_id = '0x197b6caFAf8507eF27926027b292343b7D8f76b8'
         const pid = localStorage.getItem('pid')
-        axios.post('http://localhost:3000/products/buy',
+        axios.post('http://localhost:3001/products/buy',
           {
             pid: pid,
             buyer: buyer,
