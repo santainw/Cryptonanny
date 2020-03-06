@@ -267,19 +267,22 @@ const mockPurchasePaper = [
         image: book3,
         title: 'Bit coin Block chain 101',
         amount: '7 ETH'
-        , quantity: 100
+        , quantity: 100,
+        pid: '1583479531497'
     },
     {
         image: book6,
         title: 'ผู้ชาย SEX ห่วย',
         amount: '120 ETH'
-        , quantity: 100
+        , quantity: 100,
+        pid: '1583479558941'
     },
     {
         image: book7,
         title: 'にんげん、人間 ',
         amount: '12.003 ETH'
-        , quantity: 100
+        , quantity: 100,
+        pid: '1583479576381',
     },
     {
         image: book5,
