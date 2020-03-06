@@ -20,211 +20,253 @@ const mockPaper = [
         image: book7,
         title: 'にんげん、人間 ',
         amount: '12.003 ETH'
+        ,quantity: 100
     },
     {
         image: book2,
         title: 'THE NEW MOVIE',
         amount: '1 ETH'
+        ,quantity: 100
     },
     {
         image: book3,
         title: 'Bit coin Block chain 101',
         amount: '7 ETH'
+        ,quantity: 100
     },
     {
         image: book4,
         title: 'Blockchain Tech',
         amount: '23 ETH'
+        ,quantity: 100
     },
     {
         image: book5,
         title: '10 อันดับ ปืนยอดนิยม',
         amount: '2 ETH'
+        ,quantity: 100
     },
     {
         image: book6,
         title: 'ผู้ชาย SEX ห่วย',
         amount: '120 ETH'
+        ,quantity: 100
     },
     {
         image: book1,
         title: 'EDUCATION FOR SUSTAINABLE',
         amount: '12.003 ETH'
+        ,quantity: 100
     },
     {
         image: book2,
         title: 'THE NEW MOVIE',
         amount: '1 ETH'
+        ,quantity: 100
     },
     {
         image: book3,
         title: 'Bit coin Block chain 101',
         amount: '7 ETH'
+        ,quantity: 100
     },
     {
         image: book4,
         title: 'Blockchain Tech',
         amount: '23 ETH'
+        ,quantity: 100
     },
     {
         image: book5,
         title: '10 อันดับ ปืนยอดนิยม',
         amount: '2 ETH'
+        ,quantity: 100
     },
     {
         image: book6,
         title: 'ผู้ชาย SEX ห่วย',
         amount: '120 ETH'
+        ,quantity: 100
     },
     {
         image: book1,
         title: 'EDUCATION FOR SUSTAINABLE',
         amount: '12.003 ETH'
+        ,quantity: 100
     },
     {
         image: book2,
         title: 'THE NEW MOVIE',
         amount: '1 ETH'
+        ,quantity: 100
     },
     {
         image: book3,
         title: 'Bit coin Block chain 101',
         amount: '7 ETH'
+        ,quantity: 100
     },
     {
         image: book4,
         title: 'Blockchain Tech',
         amount: '23 ETH'
+        ,quantity: 100
     },
     {
         image: book5,
         title: '10 อันดับ ปืนยอดนิยม',
         amount: '2 ETH'
+        ,quantity: 100
     },
     {
         image: book6,
         title: 'ผู้ชาย SEX ห่วย',
         amount: '120 ETH'
+        ,quantity: 100
     },
     {
         image: book1,
         title: 'EDUCATION FOR SUSTAINABLE',
         amount: '12.003 ETH'
+        ,quantity: 100
     },
     {
         image: book2,
         title: 'THE NEW MOVIE',
         amount: '1 ETH'
+        ,quantity: 100
     },
     {
         image: book3,
         title: 'Bit coin Block chain 101',
         amount: '7 ETH'
+        ,quantity: 100
     },
     {
         image: book4,
         title: 'Blockchain Tech',
         amount: '23 ETH'
+        ,quantity: 100
     },
     {
         image: book5,
         title: '10 อันดับ ปืนยอดนิยม',
         amount: '2 ETH'
+        ,quantity: 100
     },
     {
         image: book6,
         title: 'ผู้ชาย SEX ห่วย',
         amount: '120 ETH'
+        ,quantity: 100
     },
     {
         image: book1,
         title: 'EDUCATION FOR SUSTAINABLE',
         amount: '12.003 ETH'
+        ,quantity: 100
     },
     {
         image: book2,
         title: 'THE NEW MOVIE',
         amount: '1 ETH'
+        ,quantity: 100
     },
     {
         image: book3,
         title: 'Bit coin Block chain 101',
         amount: '7 ETH'
+        ,quantity: 100
     },
     {
         image: book4,
         title: 'Blockchain Tech',
         amount: '23 ETH'
+        ,quantity: 100
     },
     {
         image: book5,
         title: '10 อันดับ ปืนยอดนิยม',
         amount: '2 ETH'
+        ,quantity: 100
     },
     {
         image: book6,
         title: 'ผู้ชาย SEX ห่วย',
         amount: '120 ETH'
+        ,quantity: 100
     },
     {
         image: book1,
         title: 'EDUCATION FOR SUSTAINABLE',
         amount: '12.003 ETH'
+        ,quantity: 100
     },
     {
         image: book2,
         title: 'THE NEW MOVIE',
         amount: '1 ETH'
+        ,quantity: 100
     },
     {
         image: book3,
         title: 'Bit coin Block chain 101',
         amount: '7 ETH'
+        ,quantity: 100
     },
     {
         image: book4,
         title: 'Blockchain Tech',
         amount: '23 ETH'
+        ,quantity: 100
     },
     {
         image: book5,
         title: '10 อันดับ ปืนยอดนิยม',
         amount: '2 ETH'
+        ,quantity: 100
     },
     {
         image: book6,
         title: 'ผู้ชาย SEX ห่วย',
         amount: '120 ETH'
+        ,quantity: 100
     },
     {
         image: book1,
         title: 'EDUCATION FOR SUSTAINABLE',
         amount: '12.003 ETH'
+        ,quantity: 100
     },
     {
         image: book2,
         title: 'THE NEW MOVIE',
         amount: '1 ETH'
+        ,quantity: 100
     },
     {
         image: book3,
         title: 'Bit coin Block chain 101',
         amount: '7 ETH'
+        ,quantity: 100
     },
     {
         image: book4,
         title: 'Blockchain Tech',
         amount: '23 ETH'
+        ,quantity: 100
     },
     {
         image: book5,
         title: '10 อันดับ ปืนยอดนิยม',
         amount: '2 ETH'
+        ,quantity: 100
     },
     {
         image: book6,
         title: 'ผู้ชาย SEX ห่วย',
         amount: '120 ETH'
+        ,quantity: 100
     },
 ]
 
@@ -233,12 +275,31 @@ class BookContainer extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            paperList: []
+            paperList: [],
+            quantityList: []
         }
     }
 
     componentDidMount() {
-
+        this.setState({
+            paperList: mockPaper,
+            quantityList: []
+        })
+        axios.get('http://localhost:3000')
+            .then((result) => {
+                console.log(result)
+                let dataList = result.data.data
+                for(let i = 0; i < dataList.length; i++) {
+                    axios.get(`http://localhost:3000/products/${dataList[i]}`)
+                        .then((book) => {
+                            console.log(book)
+                            let paper = this.state.paperList
+                            paper[i].quantity = book.data.data[2]
+                            this.setState({ 
+                            paperList: paper})  
+                        })
+                }
+            })
     }
 
     fetchAllPaper() {
@@ -250,6 +311,7 @@ class BookContainer extends Component {
             <h3>{paper.title}</h3>
             <img src={paper.image}></img>
             <div className="detail">{paper.amount}</div>
+            {/* <div className="quantity">Quantity: {paper.quantity}</div> */}
         </div>)
     }
 

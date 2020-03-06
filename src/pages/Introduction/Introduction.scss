@@ -17,11 +17,14 @@ $secondary: black;
     border: 1px solid white;
     cursor: pointer;
     color: white;
-    background: black;
-    margin-right: 30%;
+    background: linear-gradient(45deg, black, transparent);    margin-right: 30%;
     margin-left: 30%;
     position: absolute;
     top: 40%;
+  }
+  .btn.site:hover {
+    color: black;
+    background-color: white;
   }
   > .wrapper {
     animation: sliding-background 40s linear infinite;
