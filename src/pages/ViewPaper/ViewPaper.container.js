@@ -8,7 +8,7 @@ function ViewPaper(props) {
 
     const {
         name,
-        imagePath,
+        imgPath,
         price
     } = props.location.state
 
@@ -24,7 +24,7 @@ function ViewPaper(props) {
                     <h5>{price}</h5>
                 </div>
                 <div className="editor-section">
-                    {imagePath}
+                    {imgPath} ETH
                 </div>
                 <div className="btn" onClick={() => handleOnBack()}>Back</div>
             </div>

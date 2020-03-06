@@ -44,8 +44,8 @@ class PaperListContainer extends Component {
     renderPaperSellList = () => {
         return this.state.paperList.map((paper, index) => <div className="paper" key={index} onClick={() => this.handleClickViewPaper(paper)}>
             <div className="title">{paper.name}</div>
-            <div className="short-description">{paper.imagePath}</div>
-            <div className="editor">{paper.price}</div>
+            <div className="short-description">{paper.imgPath}</div>
+            <div className="editor">{paper.price} ETH</div>
         </div>)
     }
 
