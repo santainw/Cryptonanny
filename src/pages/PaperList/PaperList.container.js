@@ -23,9 +23,11 @@ class PaperListContainer extends Component {
         axios.get('http://localhost:3001/getAllProducts')
             .then((result) => {
                 const products = result.data.products
-                this.setState({ paperList: products.filter((product) =>
-                    product.seller === this.state.user_wallet
-                )})
+                this.setState({
+                    paperList: products.filter((product) =>
+                        product.seller === this.state.user_wallet
+                    )
+                })
             })
     }
 

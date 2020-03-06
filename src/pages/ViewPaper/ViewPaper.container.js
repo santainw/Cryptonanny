@@ -21,10 +21,10 @@ function ViewPaper(props) {
             <div className="create-card">
                 <div className="title">
                     <h1>{name}</h1>
-                    <h5>{price}</h5>
+                    <h5>{price} ETH</h5>
                 </div>
                 <div className="editor-section">
-                    {imgPath} ETH
+                    {imgPath}
                 </div>
                 <div className="btn" onClick={() => handleOnBack()}>Back</div>
             </div>

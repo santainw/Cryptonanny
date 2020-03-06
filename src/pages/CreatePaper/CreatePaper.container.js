@@ -49,7 +49,6 @@ function CreatePaper(props) {
         localStorage.setItem('productPriceInput', price)
         localStorage.setItem('productImageInput', description)
         props.handleEmit('create_book')
-        navigate('/paper-list')
         // createPaper()
         //     .then((result) => {
         //         const data = result.data.data
