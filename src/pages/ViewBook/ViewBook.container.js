@@ -55,7 +55,7 @@ function ViewBook(props) {
                         <img src={image} />
                     </div>
                     <div className="amount">{amount}</div>
-                    <div className="view"><FontAwesomeIcon icon={faEye} />{Number(localStorage.getItem('view_list').split(',')[viewIndex]) + 1}</div>
+                    <div className="view"><FontAwesomeIcon icon={faEye} />{Number(localStorage.getItem('view_list').split(',')[viewIndex])}</div>
                 </div>
                 <div className="button-group">
                     <div className="btn purchase" onClick={() => handlePurchase()}>Purchase</div>

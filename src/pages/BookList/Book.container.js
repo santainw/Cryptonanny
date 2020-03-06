@@ -28,22 +28,23 @@ class BookContainer extends Component {
         this.setState({
             quantityList: []
         })
-        const viewList = localStorage.getItem('view_list')
-        if (viewList === null) {
-            const currentView = []
-            mockFreePaper.map(() => {
-                currentView.push(Math.floor(Math.random() * 500))
-            })
-            localStorage.setItem('view_list', currentView)
-            this.setState({ viewList: currentView })
-        } else {
-            this.setState({ viewList: viewList.split(',') })
-        }
+
         setTimeout(() => {
             this.setState({
                 freePaper: mockFreePaper,
                 purchasePaper: mockPurchasePaper
             })
+            const viewList = localStorage.getItem('view_list')
+            if (viewList === null) {
+                const currentView = []
+                mockFreePaper.map(() => {
+                    currentView.push(Math.floor(Math.random() * 500))
+                })
+                localStorage.setItem('view_list', currentView)
+                this.setState({ viewList: currentView })
+            } else {
+                this.setState({ viewList: viewList.split(',') })
+            }
         }, 800)
 
     }
