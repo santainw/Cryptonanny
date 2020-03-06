@@ -11,253 +11,253 @@ const mockFreePaper = [
     {
         image: book7,
         title: 'にんげん、人間 ',
-        amount: '12.003 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book2,
         title: 'THE NEW MOVIE',
-        amount: '1 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book3,
         title: 'Bit coin Block chain 101',
-        amount: '7 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book4,
         title: 'Blockchain Tech',
-        amount: '23 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book5,
         title: '10 อันดับ ปืนยอดนิยม',
-        amount: '2 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book6,
         title: 'ผู้ชาย SEX ห่วย',
-        amount: '120 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book1,
         title: 'EDUCATION FOR SUSTAINABLE',
-        amount: '12.003 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book2,
         title: 'THE NEW MOVIE',
-        amount: '1 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book3,
         title: 'Bit coin Block chain 101',
-        amount: '7 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book4,
         title: 'Blockchain Tech',
-        amount: '23 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book5,
         title: '10 อันดับ ปืนยอดนิยม',
-        amount: '2 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book6,
         title: 'ผู้ชาย SEX ห่วย',
-        amount: '120 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book1,
         title: 'EDUCATION FOR SUSTAINABLE',
-        amount: '12.003 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book2,
         title: 'THE NEW MOVIE',
-        amount: '1 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book3,
         title: 'Bit coin Block chain 101',
-        amount: '7 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book4,
         title: 'Blockchain Tech',
-        amount: '23 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book5,
         title: '10 อันดับ ปืนยอดนิยม',
-        amount: '2 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book6,
         title: 'ผู้ชาย SEX ห่วย',
-        amount: '120 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book1,
         title: 'EDUCATION FOR SUSTAINABLE',
-        amount: '12.003 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book2,
         title: 'THE NEW MOVIE',
-        amount: '1 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book3,
         title: 'Bit coin Block chain 101',
-        amount: '7 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book4,
         title: 'Blockchain Tech',
-        amount: '23 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book5,
         title: '10 อันดับ ปืนยอดนิยม',
-        amount: '2 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book6,
         title: 'ผู้ชาย SEX ห่วย',
-        amount: '120 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book1,
         title: 'EDUCATION FOR SUSTAINABLE',
-        amount: '12.003 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book2,
         title: 'THE NEW MOVIE',
-        amount: '1 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book3,
         title: 'Bit coin Block chain 101',
-        amount: '7 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book4,
         title: 'Blockchain Tech',
-        amount: '23 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book5,
         title: '10 อันดับ ปืนยอดนิยม',
-        amount: '2 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book6,
         title: 'ผู้ชาย SEX ห่วย',
-        amount: '120 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book1,
         title: 'EDUCATION FOR SUSTAINABLE',
-        amount: '12.003 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book2,
         title: 'THE NEW MOVIE',
-        amount: '1 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book3,
         title: 'Bit coin Block chain 101',
-        amount: '7 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book4,
         title: 'Blockchain Tech',
-        amount: '23 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book5,
         title: '10 อันดับ ปืนยอดนิยม',
-        amount: '2 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book6,
         title: 'ผู้ชาย SEX ห่วย',
-        amount: '120 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book1,
         title: 'EDUCATION FOR SUSTAINABLE',
-        amount: '12.003 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book2,
         title: 'THE NEW MOVIE',
-        amount: '1 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book3,
         title: 'Bit coin Block chain 101',
-        amount: '7 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book4,
         title: 'Blockchain Tech',
-        amount: '23 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book5,
         title: '10 อันดับ ปืนยอดนิยม',
-        amount: '2 ETH',
+        amount: '0',
         quantity: 100
     },
     {
         image: book6,
         title: 'ผู้ชาย SEX ห่วย',
-        amount: '120 ETH',
+        amount: '0',
         quantity: 100
     },
 ]

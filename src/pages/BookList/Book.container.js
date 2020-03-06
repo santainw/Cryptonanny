@@ -66,6 +66,8 @@ class BookContainer extends Component {
     render() {
         const RenderPaperFreeList = this.renderPaperFreeList
         const RenderPaperPurchaseList = this.renderPaperPurchaseList
+        const freeStyle = this.state.isFree? { textDecoration: 'underline'}: {}
+        const purchaseStyle = !this.state.isFree? { textDecoration: 'underline'}: {}
         return (
             <div className="book-list-container">
                 <div className="paper-card">
@@ -73,8 +75,8 @@ class BookContainer extends Component {
                         <h1>Paper</h1>
                     </div>
                     <div className="tab-group">
-                        <div className="tab" onClick={() => this.setState({ isFree: true })}>Free</div>
-                        <div className="tab" onClick={() => this.setState({ isFree: false })}>Purchase</div>
+                        <div className="tab" onClick={() => this.setState({ isFree: true })} style={freeStyle}>Free</div>
+                        <div className="tab" onClick={() => this.setState({ isFree: false })} style={purchaseStyle}>Purchase</div>
                     </div>
                     <div className="book-container">
                         {
