@@ -24,7 +24,8 @@ const Routes = () => {
         const user_wallet = localStorage.getItem('user_wallet')
         axios.get(`http://localhost:3001/balance/${user_wallet}`)
           .then((value) => {
-            setCoin(value.data.balance)
+            const parseBalance = value.data.balance.subString(0, value.data.balance.indexOf('.') + 2)
+            setCoin(parseBalance)
           })
         break;
       case 'user_name':
