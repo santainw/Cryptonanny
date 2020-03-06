@@ -31,7 +31,7 @@ firebase.initializeApp(firebaseConfig);
 function App() {
 
   useEffect(() => {
-    localStorage.removeItem('user_wallet')
+    // localStorage.removeItem('user_wallet')
   })
   return (
     <Provider store={storeOfProvider}>
