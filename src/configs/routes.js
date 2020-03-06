@@ -67,6 +67,28 @@ const Routes = () => {
             handleEmit('user_wallet')
           })
         break;
+      case 'create_book':
+        const paperTitle = localStorage.getItem('productImageInput')
+        const paperPrice = localStorage.getItem('productPriceInput')
+
+        let formPaper = new FormData()
+        formPaper.append('productImageInput', 'https://pbs.twimg.com/profile_images/1157035760085684224/iuxTnT5g_400x400.jpg')
+        formPaper.append('productNameInput', paperTitle)
+        formPaper.append('productPriceInput', paperPrice)
+        formPaper.append('productSeller', user_wallet)
+        formPaper.append('productQtyInput', '20')
+        formPaper.append('accountPassword', '1234')
+        axios.post('http://localhost:3001/products/add', formPaper)
+          .then(() => {
+            swal(
+              'Success!',
+              'Paper Created !',
+              'success')
+              .then(() => {
+                navigate('/paper-list')
+              })
+          })
+        break;
     }
   }
 

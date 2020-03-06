@@ -14,12 +14,19 @@ class PaperListContainer extends Component {
         super(props)
         this.state = {
             paperList: [],
-            isFree: true
+            isFree: true,
+            user_wallet: localStorage.getItem('user_wallet')
         }
     }
 
     componentDidMount() {
-
+        axios.get('http://localhost:3001/getAllProducts')
+            .then((result) => {
+                const products = result.data.products
+                this.setState({ paperList: products.filter((product) =>
+                    product.seller === this.state.user_wallet
+                )})
+            })
     }
 
     fetchAllPaper() {
@@ -35,10 +42,10 @@ class PaperListContainer extends Component {
     }
 
     renderPaperSellList = () => {
-        return mockSellPaper.map((paper, index) => <div className="paper" key={index} onClick={() => this.handleClickViewPaper(paper)}>
-            <div className="title">{paper.title}</div>
-            <div className="short-description">{paper.description}</div>
-            <div className="editor">{paper.editor}</div>
+        return this.state.paperList.map((paper, index) => <div className="paper" key={index} onClick={() => this.handleClickViewPaper(paper)}>
+            <div className="title">{paper.name}</div>
+            {/* <div className="short-description">{paper.description}</div>
+            <div className="editor">{paper.editor}</div> */}
         </div>)
     }
 
