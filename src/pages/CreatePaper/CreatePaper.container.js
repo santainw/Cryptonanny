@@ -7,12 +7,13 @@ import { navigate } from '@reach/router'
 import swal from 'sweetalert'
 
 function CreatePaper(props) {
-    const [createType, setCreateType] = useState('sell')
+    const [createType, setCreateType] = useState('free')
     const [title, setTitle] = useState('')
     const [price, setPrice] = useState('0')
     const [freeStyle, setFreeStyle] = useState({})
     const [sellStyle, setSellStyle] = useState({})
     const [description, setDescription] = useState('')
+    const [isBlockInput, setIsBlockInput] = useState(true)
 
 
     const createPaper = () => {
@@ -33,14 +34,6 @@ function CreatePaper(props) {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 }
             }
-            // {
-            //     productImageInput: book7,
-            //     productNameInput: 'หนังสือ',
-            //     productPriceInput: '800',
-            //     productSeller: '0x7F4b3B98788E36f9A62bFE227EBC1328157f2f44',
-            //     productQtyInput: '20',
-            //     accountPassword: '1234'
-            // }
         )
     }
 
@@ -49,18 +42,6 @@ function CreatePaper(props) {
         localStorage.setItem('productPriceInput', price)
         localStorage.setItem('productImageInput', description)
         props.handleEmit('create_book')
-        // createPaper()
-        //     .then((result) => {
-        //         const data = result.data.data
-        //         localStorage.setItem('pid', data.pid)
-        //         swal(
-        //             'Success!',
-        //             'Paper Created !',
-        //             'success')
-        //             .then(() => {
-        //                 navigate('/paper-list')
-        //             })
-        //     })
     }
 
     const RenderCreateType = () => {
@@ -71,6 +52,7 @@ function CreatePaper(props) {
     }
 
     const handlePrice = (value) => {
+        console.log(value)
         if (createType === 'free') {
             setPrice('0')
         } else {
@@ -83,9 +65,11 @@ function CreatePaper(props) {
             setPrice('0')
             setFreeStyle({ background: 'black', color: 'white' })
             setSellStyle({ background: '#949494', color: 'white' })
+            setIsBlockInput(true)
         } else {
             setSellStyle({ background: 'black', color: 'white' })
             setFreeStyle({ background: '#949494', color: 'white' })
+            setIsBlockInput(false)
         }
     }
 
@@ -104,9 +88,10 @@ function CreatePaper(props) {
                         <div className="button" style={freeStyle} onClick={() => handleCreateType('free')}>Free</div>
                         <div className="button" style={sellStyle} onClick={() => handleCreateType('sell')}>Sell</div>
                     </div>
-                    <div className="form"><input placeholder='price' 
-                    className="price" value={price} 
-                    onChange={(e) => handlePrice(e.target.value)}/>
+                    <div className="form">
+                        <input placeholder='price'
+                            className="price" defaultValue={price}
+                            onChange={(e) => handlePrice(e.target.value)} disabled={isBlockInput} />
                         <div className="unit">ETH</div></div>
                     <div className="form">
                         <input type="file" />

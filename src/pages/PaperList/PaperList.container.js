@@ -52,7 +52,6 @@ class PaperListContainer extends Component {
     }
 
     handleClickViewPaper = (paper) => {
-        console.log('StateL ', paper)
         navigate('/view-paper', { state: paper })
     }
 
@@ -63,6 +62,8 @@ class PaperListContainer extends Component {
     render() {
         const RenderPaperFreeList = this.renderPaperFreeList
         const RenderPaperSellList = this.renderPaperSellList
+        const freeStyle = this.state.isFree ? { textDecoration: 'underline' } : {}
+        const purchaseStyle = !this.state.isFree ? { textDecoration: 'underline' } : {}
         return (
             <div className="paper-list-container">
                 <div className="paper-card">
@@ -71,8 +72,8 @@ class PaperListContainer extends Component {
                         <div className="btn" onClick={() => this.handleClickCreatePage()}>Create Paper</div>
                     </div>
                     <div className="tab-group">
-                        <div className="tab" onClick={() => this.setState({ isFree: true })}>Free</div>
-                        <div className="tab" onClick={() => this.setState({ isFree: false })}>Sell</div>
+                        <div className="tab" onClick={() => this.setState({ isFree: true })} style={freeStyle}>Free</div>
+                        <div className="tab" onClick={() => this.setState({ isFree: false })} style={purchaseStyle}>Sell</div>
                     </div>
                     {
                         this.state.isFree ? <RenderPaperFreeList /> : <RenderPaperSellList />
