@@ -62,7 +62,7 @@ class BookContainer extends Component {
         return this.state.purchasePaper.length === 0 && this.state.viewList.length === 0 ? <Loading /> : this.state.purchasePaper.map((paper, index) => <div className="paper" key={index} onClick={() => this.handleClickViewPaper(paper, index)}>
             <h3>{paper.title}</h3>
             <img src={paper.image}></img>
-            <div className="detail">{paper.amount} ETH</div>
+            <div className="detail">{paper.amount}</div>
             <div className="view"><FontAwesomeIcon icon={faEye} />{this.state.viewList[index]}</div>
         </div>)
     }

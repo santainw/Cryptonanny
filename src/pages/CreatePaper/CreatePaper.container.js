@@ -61,11 +61,13 @@ function CreatePaper(props) {
 
     const handleCreateType = (type) => {
         if (type === 'free') {
+            setCreateType('free')
             setPrice('0')
             setFreeStyle({ background: 'black', color: 'white' })
             setSellStyle({ background: '#949494', color: 'white' })
             setIsBlockInput(true)
         } else {
+            setCreateType('sell')
             setSellStyle({ background: 'black', color: 'white' })
             setFreeStyle({ background: '#949494', color: 'white' })
             setIsBlockInput(false)
@@ -89,7 +91,7 @@ function CreatePaper(props) {
                     </div>
                     <div className="form">
                         <input placeholder='price'
-                            className="price" defaultValue={price}
+                            className="price"
                             onChange={(e) => handlePrice(e.target.value)} disabled={isBlockInput} />
                         <div className="unit">ETH</div></div>
                     <div className="form">
