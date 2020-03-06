@@ -6,7 +6,7 @@ import './Introduction.scss'
 import { navigate } from '@reach/router'
 
 const mockUser = {
-    'testNanny': '0x197b6caFAf8507eF27926027b292343b7D8f76b8'
+    'testNanny': '0xB3a60CC21812d1994C7Ac5849A5918771822c7D2'
 }
 
 function Introduction(props) {
@@ -28,7 +28,8 @@ function Introduction(props) {
                 'Login success!',
                 'success')
                 .then(() => {
-                    localStorage.setItem('user_wallet', mockUser[username])
+                    // localStorage.setItem('user_wallet', mockUser[username])
+                    localStorage.setItem('user_wallet', mockUser['testNanny'])
                     localStorage.setItem('user_name', username)
                     props.handleEmit('user_wallet')
                     props.handleEmit('user_name')

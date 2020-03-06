@@ -43,6 +43,7 @@ class PaperListContainer extends Component {
     }
 
     handleClickViewPaper = (paper) => {
+        console.log('StateL ', paper)
         navigate('/view-paper', { state: paper })
     }
 
