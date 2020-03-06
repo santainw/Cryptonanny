@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Provider } from 'react-redux'
 import { Routes, store, service } from 'configs'
 import { environment } from 'const'
@@ -30,6 +30,9 @@ firebase.initializeApp(firebaseConfig);
 
 function App() {
 
+  useEffect(() => {
+    localStorage.removeItem('user_wallet')
+  })
   return (
     <Provider store={storeOfProvider}>
       <Routes />

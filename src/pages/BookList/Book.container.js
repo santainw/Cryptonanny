@@ -7,7 +7,7 @@ import {
 } from './Book.mock'
 import { Loading } from 'components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEye } from '@fortawesome/free-solid-svg-icons'
+import { faEye, faBook } from '@fortawesome/free-solid-svg-icons'
 
 import './Book.container.scss'
 
@@ -80,7 +80,7 @@ class BookContainer extends Component {
             <div className="book-list-container">
                 <div className="paper-card">
                     <div className="title">
-                        <h1>Paper</h1>
+                        <FontAwesomeIcon icon={faBook} /><h1>Paper</h1>
                     </div>
                     <div className="tab-group">
                         <div className="tab" onClick={() => this.setState({ isFree: true })} style={freeStyle}>Free</div>

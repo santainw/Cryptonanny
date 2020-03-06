@@ -7,6 +7,7 @@ import './Navbar.scss'
 function Navbar(props) {
 
     useEffect(() => {   
+
     }, [])
 
     const handleClickLogo = () => {
@@ -19,7 +20,7 @@ function Navbar(props) {
 
     return (
         <div className="navbar">
-            <div className="project-name" onClick={() => handleClickLogo()}>
+            <div className="project-name" onClick={() => props.handleEmit('home')}>
                 Cryptonanny
             </div>
             <div className="wallet">

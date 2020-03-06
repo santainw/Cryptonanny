@@ -1,10 +1,12 @@
 body {
   margin: 0;
-  background-image: url("./../images/background.jpg");
+  background-image: url("./../images/images.png");
+  background-position: center;
+  background-position-y: 1110px;
 }
 
 * {
-  font-family: sans-serif;
+  font-family: monospace;
 }
 
 .btn {

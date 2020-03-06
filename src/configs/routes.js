@@ -63,7 +63,6 @@ const Routes = () => {
           to: user_wallet
         })
           .then((result) => {
-            console.log(result)
             handleEmit('user_wallet')
           })
         break;
@@ -89,6 +88,13 @@ const Routes = () => {
               })
           })
         break;
+        case 'home':
+          if(localStorage.getItem('user_wallet') !== null) {
+            navigate('/book-list')
+          } else {
+            navigate('/')
+          }
+          break;
     }
   }
 
@@ -96,7 +102,7 @@ const Routes = () => {
     <>
       {/* <Favicon url="/assets/images/nanny.jpg" /> */}
       <Router>
-        <Root path='/' coin={coin} username={username}>
+        <Root path='/' coin={coin} username={username} handleEmit={handleEmit}>
           <Home path='/' handleEmit={handleEmit} />
           <BookList path='/book-list' handleEmit={handleEmit} />
           <PaperList path='/paper-list' handleEmit={handleEmit} />
