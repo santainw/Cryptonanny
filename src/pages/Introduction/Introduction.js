@@ -15,8 +15,7 @@ function Introduction(props) {
     const [password, setPassword] = useState('')
 
     const handleBtnInSite = () => {
-        if (false) {
-            // if (mockUser[username] === undefined) {
+        if (mockUser[username] === undefined) {
             swal(
                 'Fail!',
                 'Wrong username and password !',
@@ -28,7 +27,7 @@ function Introduction(props) {
                 'Login success!',
                 'success')
                 .then(() => {
-                    // localStorage.setItem('user_wallet', mockUser[username])
+                    localStorage.setItem('user_wallet', mockUser[username])
                     localStorage.setItem('user_wallet', mockUser['testNanny'])
                     localStorage.setItem('user_name', username)
                     props.handleEmit('user_wallet')
