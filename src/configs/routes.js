@@ -21,7 +21,8 @@ const Routes = () => {
   const handleEmit = (value) => {
     switch (value) {
       case 'user_wallet':
-        axios.get('http://localhost:3001/balance', { headers: { acc: localStorage.getItem('user_wallet') } })
+        const user_wallet = localStorage.getItem('user_wallet')
+        axios.get(`http://localhost:3001/balance/${user_wallet}`)
           .then((value) => {
             setCoin(value.balance)
           })
