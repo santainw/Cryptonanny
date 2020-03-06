@@ -20,12 +20,12 @@ const Routes = () => {
   const [coin, setCoin] = useState('0')
 
   const handleEmit = (value) => {
+    const user_wallet = localStorage.getItem('user_wallet')
     switch (value) {
       case 'user_wallet':
-        const user_wallet = localStorage.getItem('user_wallet')
         axios.get(`http://localhost:3001/balance/${user_wallet}`)
           .then((value) => {
-            const parseBalance = value.data.balance.includes('.') ? value.data.balance.substring(0, value.data.balance.indexOf('.') + 2) : value.data.balance 
+            const parseBalance = value.data.balance.includes('.') ? value.data.balance.substring(0, value.data.balance.indexOf('.') + 2) : value.data.balance
             setCoin(parseBalance)
           })
         break;
@@ -56,6 +56,15 @@ const Routes = () => {
                 handleEmit('user_wallet')
                 navigate('book-list')
               })
+          })
+        break;
+      case 'view_count':
+        axios.post('http://localhost:3001/products/free', {
+          to: user_wallet
+        })
+          .then((result) => {
+            console.log(result)
+            handleEmit('user_wallet')
           })
         break;
     }

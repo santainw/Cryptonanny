@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import './ViewBook.container.scss'
 import swal from 'sweetalert'
@@ -6,13 +6,27 @@ import axios from 'axios'
 import { navigate } from '@reach/router'
 
 function ViewBook(props) {
+    const {
+        handleEmit
+    } = props
 
     const {
         title,
         image,
         amount,
-        pid
+        pid,
     } = props.location.state
+
+    useEffect(() => {
+        console.log(handleEmit)
+        if (pid === undefined) {
+            viewBenefit()
+        }
+    }, [])
+
+    const viewBenefit = () => {
+        handleEmit('view_count')
+    }
 
     const handleOnBack = () => {
         navigate('/book-list')
