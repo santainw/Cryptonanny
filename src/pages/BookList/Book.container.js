@@ -5,6 +5,9 @@ import {
     mockFreePaper,
     mockPurchasePaper
 } from './Book.mock'
+import { Loading } from 'components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye } from '@fortawesome/free-solid-svg-icons'
 
 import './Book.container.scss'
 
@@ -13,9 +16,11 @@ class BookContainer extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            paperList: [],
+            freePaper: [],
+            purchasePaper: [],
             quantityList: [],
-            isFree: true
+            isFree: true,
+            viewList: []
         }
     }
 
@@ -23,51 +28,53 @@ class BookContainer extends Component {
         this.setState({
             quantityList: []
         })
-        // axios.get('http://localhost:3000')
-        //     .then((result) => {
-        //         let dataList = result.data.data
-        //         for(let i = 0; i < dataList.length; i++) {
-        //             axios.get(`http://localhost:3000/products/${dataList[i]}`)
-        //                 .then((book) => {
-        //                     console.log(book)
-        //                     let paper = this.state.paperList
-        //                     paper[i].quantity = book.data.data[2]
-        //                     this.setState({ 
-        //                     paperList: paper})  
-        //                 })
-        //         }
-        //     })
-    }
+        const viewList = localStorage.getItem('view_list')
+        if (viewList === null) {
+            const currentView = []
+            mockFreePaper.map(() => {
+                currentView.push(Math.floor(Math.random() * 500))
+            })
+            localStorage.setItem('view_list', currentView)
+            this.setState({ viewList: currentView })
+        } else {
+            this.setState({ viewList: viewList.split(',') })
+        }
+        setTimeout(() => {
+            this.setState({
+                freePaper: mockFreePaper,
+                purchasePaper: mockPurchasePaper
+            })
+        }, 800)
 
-    fetchAllPaper() {
-        return axios.get('')
     }
 
     renderPaperFreeList = () => {
-        return mockFreePaper.map((paper, index) => <div className="paper" key={index} onClick={() => this.handleClickViewPaper(paper)}>
+        return (this.state.freePaper.length === 0 && this.state.viewList.length === 0) ? <Loading /> : this.state.freePaper.map((paper, index) => <div className="paper" key={index} onClick={() => this.handleClickViewPaper(paper, index)}>
             <h3>{paper.title}</h3>
             <img src={paper.image}></img>
-            <div className="detail">{paper.amount}</div>
+            <div className="detail">{paper.amount} ETH</div>
+            <div className="view"><FontAwesomeIcon icon={faEye} />{this.state.viewList[index]}</div>
         </div>)
     }
 
     renderPaperPurchaseList = () => {
-        return mockPurchasePaper.map((paper, index) => <div className="paper" key={index} onClick={() => this.handleClickViewPaper(paper)}>
+        return this.state.purchasePaper.length === 0 && this.state.viewList.length === 0 ? <Loading /> : this.state.purchasePaper.map((paper, index) => <div className="paper" key={index} onClick={() => this.handleClickViewPaper(paper, index)}>
             <h3>{paper.title}</h3>
             <img src={paper.image}></img>
-            <div className="detail">{paper.amount}</div>
+            <div className="detail">{paper.amount} ETH</div>
+            <div className="view"><FontAwesomeIcon icon={faEye} />{this.state.viewList[index]}</div>
         </div>)
     }
 
-    handleClickViewPaper = (paper) => {
-        navigate('/view-book', { state: paper })
+    handleClickViewPaper = (paper, index) => {
+        navigate('/view-book', { state: { ...paper, viewIndex: index } })
     }
 
     render() {
         const RenderPaperFreeList = this.renderPaperFreeList
         const RenderPaperPurchaseList = this.renderPaperPurchaseList
-        const freeStyle = this.state.isFree? { textDecoration: 'underline'}: {}
-        const purchaseStyle = !this.state.isFree? { textDecoration: 'underline'}: {}
+        const freeStyle = this.state.isFree ? { textDecoration: 'underline' } : {}
+        const purchaseStyle = !this.state.isFree ? { textDecoration: 'underline' } : {}
         return (
             <div className="book-list-container">
                 <div className="paper-card">

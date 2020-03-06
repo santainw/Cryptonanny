@@ -5,6 +5,7 @@ import {
     mockSellPaper
 } from './PaperList.mock'
 import { navigate } from '@reach/router'
+import { Loading } from 'components'
 
 import './PaperList.container.scss'
 
@@ -44,7 +45,7 @@ class PaperListContainer extends Component {
     }
 
     renderPaperSellList = () => {
-        return this.state.paperList.map((paper, index) => <div className="paper" key={index} onClick={() => this.handleClickViewPaper(paper)}>
+        return this.state.paperList.length === 0 ? <Loading/> : this.state.paperList.map((paper, index) => <div className="paper" key={index} onClick={() => this.handleClickViewPaper(paper)}>
             <div className="title">{paper.name}</div>
             <div className="short-description">{paper.imgPath}</div>
             <div className="editor">{paper.price} ETH</div>

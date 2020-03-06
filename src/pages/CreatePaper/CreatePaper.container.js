@@ -52,7 +52,6 @@ function CreatePaper(props) {
     }
 
     const handlePrice = (value) => {
-        console.log(value)
         if (createType === 'free') {
             setPrice('0')
         } else {

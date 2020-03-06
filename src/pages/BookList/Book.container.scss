@@ -61,6 +61,14 @@
       overflow: hidden;
       width: 160px;
       text-align: center;
+      .view {
+        font-size: 12px;
+        margin-top: 5px;
+        color: #8c8b8b;
+        svg {
+          margin-right: 10px;
+        }
+      }
       > h3 {
         word-spacing: unset;
         word-spacing: unset;

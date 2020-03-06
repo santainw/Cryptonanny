@@ -23,6 +23,15 @@
       text-align: center;
       font-size: 30px;
     }
+    .view {
+      font-size: 12px;
+      margin-top: 5px;
+      color: #8c8b8b;
+      text-align: center;
+      svg {
+        margin-right: 10px;
+      }
+    }
   }
   .button-group {
     display: flex;
