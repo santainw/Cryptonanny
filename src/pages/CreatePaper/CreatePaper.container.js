@@ -6,8 +6,10 @@ import book7 from 'assets/images/book7.jpg'
 import { navigate } from '@reach/router'
 import swal from 'sweetalert'
 
-function CreatePaper() {
+function CreatePaper(props) {
     const [createType, setCreateType] = useState(null)
+    const [title, setTitle] = useState('')
+    const [price, setPrice] = useState('0')
 
     const createPaper = () => {
         let formPaper = new FormData()
@@ -39,18 +41,22 @@ function CreatePaper() {
     }
 
     const handleOnCreate = () => {
-        createPaper()
-            .then((result) => {
-                const data = result.data.data
-                localStorage.setItem('pid', data.pid)
-                swal(
-                    'Success!',
-                    'Paper Created !',
-                    'success')
-                    .then(() => {
-                        navigate('/paper-list')
-                    })
-            })
+        localStorage.setItem('productNameInput', title)
+        localStorage.setItem('productPriceInput', price)
+        props.handleEmit('create_book')
+        navigate('/paper-list')
+        // createPaper()
+        //     .then((result) => {
+        //         const data = result.data.data
+        //         localStorage.setItem('pid', data.pid)
+        //         swal(
+        //             'Success!',
+        //             'Paper Created !',
+        //             'success')
+        //             .then(() => {
+        //                 navigate('/paper-list')
+        //             })
+        //     })
     }
 
     const RenderCreateType = () => {
@@ -64,7 +70,7 @@ function CreatePaper() {
         if (createType === 'free') {
             return <><div className="free">0</div><div className="unit">ETH</div></>
         } else {
-            return <><input placeholder='price' type="number" /><div className="unit">ETH</div></>
+            return <><input placeholder='price' type="text" onChange={(e) => setPrice(e.target.value)}/><div className="unit">ETH</div></>
         }
     }
 
@@ -77,7 +83,7 @@ function CreatePaper() {
                 <div className="create-form">
                     <div className="form">
                         <div className="text">Title: </div>
-                        <input placeholder='title' />
+                        <input placeholder='title' onChange={(e) => setTitle(e.target.value)}/>
                     </div>
                     {createType === null ? <RenderCreateType /> : <div className="form">
                         <div className="text">Price: </div>

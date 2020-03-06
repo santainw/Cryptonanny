@@ -68,7 +68,7 @@ const Routes = () => {
           })
         break;
       case 'create_book':
-        const paperTitle = localStorage.getItem('productImageInput')
+        const paperTitle = localStorage.getItem('productNameInput')
         const paperPrice = localStorage.getItem('productPriceInput')
 
         let formPaper = new FormData()
