@@ -7,9 +7,9 @@ import { navigate } from '@reach/router'
 function ViewPaper(props) {
 
     const {
-        title,
-        description,
-        editor
+        name,
+        imagePath,
+        price
     } = props.location.state
 
     const handleOnBack = () => {
@@ -20,11 +20,11 @@ function ViewPaper(props) {
         <div className="create-paper-container">
             <div className="create-card">
                 <div className="title">
-                    <h1>{title}</h1>
-                    <h5>{editor}</h5>
+                    <h1>{name}</h1>
+                    <h5>{price}</h5>
                 </div>
                 <div className="editor-section">
-                    {description}
+                    {imagePath}
                 </div>
                 <div className="btn" onClick={() => handleOnBack()}>Back</div>
             </div>

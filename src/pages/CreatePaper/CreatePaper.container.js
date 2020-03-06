@@ -12,6 +12,7 @@ function CreatePaper(props) {
     const [price, setPrice] = useState('0')
     const [freeStyle, setFreeStyle] = useState({})
     const [sellStyle, setSellStyle] = useState({})
+    const [description, setDescription] = useState('')
 
 
     const createPaper = () => {
@@ -46,6 +47,7 @@ function CreatePaper(props) {
     const handleOnCreate = () => {
         localStorage.setItem('productNameInput', title)
         localStorage.setItem('productPriceInput', price)
+        localStorage.setItem('productImageInput')
         props.handleEmit('create_book')
         navigate('/paper-list')
         // createPaper()
@@ -112,7 +114,7 @@ function CreatePaper(props) {
                     </div>
                 </div>
                 <div className="editor-section">
-                    <textarea></textarea>
+                    <textarea onChange={(e) => setDescription(e.target.value)}></textarea>
                 </div>
                 <div className="btn" onClick={() => handleOnCreate()}>Create</div>
             </div>

@@ -70,9 +70,9 @@ const Routes = () => {
       case 'create_book':
         const paperTitle = localStorage.getItem('productNameInput')
         const paperPrice = localStorage.getItem('productPriceInput')
-
+        const paperImage = localStorage.getItem('productImageInput')
         let formPaper = new FormData()
-        formPaper.append('productImageInput', 'https://pbs.twimg.com/profile_images/1157035760085684224/iuxTnT5g_400x400.jpg')
+        formPaper.append('productImageInput', paperImage)
         formPaper.append('productNameInput', paperTitle)
         formPaper.append('productPriceInput', paperPrice)
         formPaper.append('productSeller', user_wallet)
