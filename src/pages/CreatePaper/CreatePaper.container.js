@@ -70,7 +70,7 @@ function CreatePaper(props) {
         if (createType === 'free') {
             return <><div className="free">0</div><div className="unit">ETH</div></>
         } else {
-            return <><input placeholder='price' type="text" onChange={(e) => setPrice(e.target.value)}/><div className="unit">ETH</div></>
+            return <><input placeholder='price' onChange={(e) => setPrice(e.target.value)}/><div className="unit">ETH</div></>
         }
     }
 
